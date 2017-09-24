@@ -9,7 +9,10 @@ import Menu from "./Menu";
 
 class MyToDo extends Component {
 
+
+
     render() {
+
         console.log(this.props);
         return (
             <div className="container-fluid">
@@ -42,34 +45,41 @@ class MyToDo extends Component {
                 <hr/>*/}
                 <div className="row ">
                     <div className="card-deck col-md-12 justify-content-md-center">
-                    <div className="card col-md-4">
-                        <div className="card-body">
-                            {
-                                this.props.todoArr.map((todo,index) => {
-                                    return(
-                                        <Menu
-                                            key={index}
-                                            item={todo}
-                                        />
-                                    );
-                                })
-                            }
+                        <div className="card col-md-4">
+                            <div className="card-body">
+                                {
+                                    this.props.todoArr.map((todo,index) => {
+                                        return(
+                                            <Menu
+                                                key={index}
+                                                item={todo}
+                                            />
+                                        );
+                                    })
+                                }
+                            </div>
                         </div>
-                    </div>
-                    <div className="card col-md-4">
-                        <div className="card-body">
-                            {
-                                this.props.todoArr.map((todo,index) => {
-                                    return(
-                                        <TodoItem
-                                            key={index}
-                                            item={todo}
-                                        />
-                                    );
-                                })
-                            }
+                        <div className="card col-md-4">
+                            <div className="card-body">
+                                <div className="card-block">
+                                {
+                                    this.props.todoArr.map((todo,index) => {
+                                        return(
+                                            <TodoItem
+                                                key={index}
+                                                item={todo}
+                                            />
+                                        );
+                                    })
+                                }
+                                </div>
+
+                                <div className="card-block">
+                                    <h3>total</h3>
+                                    {this.props.total}
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
 
                     </div>
@@ -81,13 +91,18 @@ class MyToDo extends Component {
 
 
 function mapStateToProps(todos) {
-    const todoArr = Object.keys(todos).map((item) => (
+
+console.log(todos);
+    const todoArr = Object.keys(todos.items).map((item) => (
         {
             'todo' : item,
-            'status' : todos[item]
+            'desc' : todos.items[item]
         }
     ));
-    return {todoArr};
+
+    const total = todos.total;
+
+    return {todoArr, total};
 }
 
 function mapDispatchToProps(dispatch) {

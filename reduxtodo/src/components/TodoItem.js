@@ -14,11 +14,12 @@ class TodoItem extends Component {
         return (
             <div className="row justify-content-md-center">
                 <div className="col-md-12">
-                    { item.status === 'active'  ? (
+                    { item.desc.status === 'active'  ? (
                     <div className={todoClass} role="alert">
 
 
                             { item.todo }
+                        { item.desc.price }
                             <button
                                 className="close"
                                 onClick={() => {

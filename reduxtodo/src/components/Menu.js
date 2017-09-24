@@ -15,7 +15,8 @@ class Menu extends Component {
                 <div className="col-md-12">
                     <div className={todoClass} role="alert">
                         { item.todo }
-                        { item.status === 'new' || item.status === 'cancel'  ? (
+                        { item.desc.price }
+                        { item.desc.status === 'new' || item.desc.status === 'cancel'  ? (
 
                         <button
                             className="btn btn-primary btn-sm"
