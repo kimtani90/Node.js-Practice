@@ -20,6 +20,7 @@ class TodoItem extends Component {
 
                             { item.todo }
                         { item.desc.price }
+                        qty:{ item.desc.qty }
                             <button
                                 className="close"
                                 onClick={() => {

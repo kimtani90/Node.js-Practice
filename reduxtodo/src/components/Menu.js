@@ -15,15 +15,15 @@ class Menu extends Component {
                 <div className="col-md-12">
                     <div className={todoClass} role="alert">
                         { item.todo }
-                        { item.desc.price }
-                        { item.desc.status === 'new' || item.desc.status === 'cancel'  ? (
+                        ${ item.desc.price }
+
 
                         <button
                             className="btn btn-primary btn-sm"
                             onClick={() => {
                                 this.props.addTodo(item.todo)
                             }}
-                        >Add</button>) : ''}
+                        >Add</button>
                     </div>
                 </div>
             </div>

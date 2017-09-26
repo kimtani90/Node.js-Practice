@@ -61,7 +61,7 @@ class MyToDo extends Component {
                         </div>
                         <div className="card col-md-4">
                             <div className="card-body">
-                                <div className="card-block">
+
                                 {
                                     this.props.todoArr.map((todo,index) => {
                                         return(
@@ -72,13 +72,13 @@ class MyToDo extends Component {
                                         );
                                     })
                                 }
-                                </div>
 
-                                <div className="card-block">
+                            </div>
+                                <div className="card-footer">
                                     <h3>total</h3>
                                     {this.props.total}
                                 </div>
-                            </div>
+
                         </div>
 
 
