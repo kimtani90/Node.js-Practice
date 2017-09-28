@@ -20,7 +20,8 @@ console.log(state.items[action.newItem]);
                 ...state,
 
                 items:{...state.items,
-                    [action.newItem] : { price: state.items[action.newItem].price, status:'active', qty: Number(state.items[action.newItem].qty)+1}
+                    [action.newItem] : { price: state.items[action.newItem].price,
+                        status:'active', qty: Number(state.items[action.newItem].qty)+1}
                 }, total : state.total + Number(state.items[action.newItem].price)
 
             };
@@ -30,8 +31,9 @@ console.log(state.items[action.newItem]);
                 ...state,
 
                 items:{...state.items,
-                    [action.changedTodo] : { price: state.items[action.changedTodo].price, status:'cancel', qty:0}
-                }, total : state.total - Number(state.items[action.changedTodo].price * state.items[action.changedTodo].qty)
+                    [action.changedTodo] : { price: state.items[action.changedTodo].price,
+                        status: state.items[action.changedTodo].qty===1?'cancel':'active', qty:state.items[action.changedTodo].qty-1}
+                }, total : state.total - Number(state.items[action.changedTodo].price)
 
             };
 
