@@ -31,7 +31,7 @@ console.log(state.items[action.newItem]);
 
                 items:{...state.items,
                     [action.changedTodo] : { price: state.items[action.changedTodo].price, status:'cancel', qty:0}
-                }, total : 0//state.total - Number(state.items[action.changedTodo].price)
+                }, total : state.total - Number(state.items[action.changedTodo].price * state.items[action.changedTodo].qty)
 
             };
 

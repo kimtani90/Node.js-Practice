@@ -74,9 +74,16 @@ class MyToDo extends Component {
                                 }
 
                             </div>
-                                <div className="card-footer">
-                                    <h3>total</h3>
-                                    {this.props.total}
+                                <div className="footer">
+                                    <hr/>
+                                    <div className="row justify-content-md-left">
+                                    <div className="col-md-10">
+                                    <h5>Total:</h5>
+                                    </div>
+                                    <div className="col-md-2 ">
+                                      <h5> $ {this.props.total}</h5>
+                                    </div>
+                                    </div>
                                 </div>
 
                         </div>

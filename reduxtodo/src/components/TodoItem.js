@@ -16,17 +16,25 @@ class TodoItem extends Component {
                 <div className="col-md-12">
                     { item.desc.status === 'active'  ? (
                     <div className={todoClass} role="alert">
-
-
-                            { item.todo }
-                        { item.desc.price }
-                        qty:{ item.desc.qty }
+                        <div className="row justify-content-md-left">
+                            <div className="col-md-3">
+                                 { item.todo }
+                            </div>
+                            <div className="col-md-3">
+                                 ${ item.desc.price }
+                            </div>
+                            <div className="col-md-3">
+                                Qty: { item.desc.qty }
+                            </div>
+                            <div className="col-md-3">
                             <button
                                 className="close"
                                 onClick={() => {
                                     this.props.doneTodo(item.todo);
                                 }}
                             ><span aria-hidden={true}>&times;</span></button>
+                            </div>
+                        </div>
                     </div>) : ''}
 
                 </div>
